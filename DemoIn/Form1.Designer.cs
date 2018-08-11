@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.txtMa = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.nudTu = new System.Windows.Forms.NumericUpDown();
@@ -36,6 +37,7 @@
             this.nudDen = new System.Windows.Forms.NumericUpDown();
             this.button1 = new System.Windows.Forms.Button();
             this.pbQRcode = new System.Windows.Forms.PictureBox();
+            this.comboPaperSource = new System.Windows.Forms.ComboBox();
             this.lblSTT = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudTu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDen)).BeginInit();
@@ -120,12 +122,21 @@
             // pbQRcode
             // 
             this.pbQRcode.BackColor = System.Drawing.Color.White;
-            this.pbQRcode.Location = new System.Drawing.Point(75, 116);
+            this.pbQRcode.Location = new System.Drawing.Point(84, 116);
             this.pbQRcode.Name = "pbQRcode";
             this.pbQRcode.Size = new System.Drawing.Size(200, 200);
             this.pbQRcode.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbQRcode.TabIndex = 7;
             this.pbQRcode.TabStop = false;
+            // 
+            // comboPaperSource
+            // 
+            this.comboPaperSource.FormattingEnabled = true;
+            this.comboPaperSource.Location = new System.Drawing.Point(5, 149);
+            this.comboPaperSource.Name = "comboPaperSource";
+            this.comboPaperSource.Size = new System.Drawing.Size(73, 21);
+            this.comboPaperSource.TabIndex = 9;
+            this.comboPaperSource.Visible = false;
             // 
             // lblSTT
             // 
@@ -136,12 +147,14 @@
             this.lblSTT.Size = new System.Drawing.Size(29, 15);
             this.lblSTT.TabIndex = 8;
             this.lblSTT.Text = "STT";
+            this.lblSTT.Visible = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(354, 322);
+            this.Controls.Add(this.comboPaperSource);
             this.Controls.Add(this.lblSTT);
             this.Controls.Add(this.pbQRcode);
             this.Controls.Add(this.button1);
@@ -151,8 +164,9 @@
             this.Controls.Add(this.nudTu);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtMa);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Demo ";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudTu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDen)).EndInit();
@@ -172,6 +186,7 @@
         private System.Windows.Forms.NumericUpDown nudDen;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pbQRcode;
+        private System.Windows.Forms.ComboBox comboPaperSource;
         private System.Windows.Forms.Label lblSTT;
     }
 }

@@ -33,7 +33,7 @@
             this.txtDocFile = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.txtDocScan = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblPort = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtKetQua = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -55,7 +55,7 @@
             // 
             // txtDocFile
             // 
-            this.txtDocFile.Location = new System.Drawing.Point(134, 38);
+            this.txtDocFile.Location = new System.Drawing.Point(176, 38);
             this.txtDocFile.Name = "txtDocFile";
             this.txtDocFile.Size = new System.Drawing.Size(130, 20);
             this.txtDocFile.TabIndex = 2;
@@ -68,19 +68,19 @@
             // 
             // txtDocScan
             // 
-            this.txtDocScan.Location = new System.Drawing.Point(134, 12);
+            this.txtDocScan.Location = new System.Drawing.Point(176, 12);
             this.txtDocScan.Name = "txtDocScan";
             this.txtDocScan.Size = new System.Drawing.Size(130, 20);
             this.txtDocScan.TabIndex = 3;
             // 
-            // label1
+            // lblPort
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(116, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Giá trị đọc từ máy scan";
+            this.lblPort.AutoSize = true;
+            this.lblPort.Location = new System.Drawing.Point(12, 15);
+            this.lblPort.Name = "lblPort";
+            this.lblPort.Size = new System.Drawing.Size(68, 13);
+            this.lblPort.TabIndex = 4;
+            this.lblPort.Text = "Giá trị đọc từ";
             // 
             // label2
             // 
@@ -93,7 +93,7 @@
             // 
             // txtKetQua
             // 
-            this.txtKetQua.Location = new System.Drawing.Point(134, 64);
+            this.txtKetQua.Location = new System.Drawing.Point(176, 64);
             this.txtKetQua.Name = "txtKetQua";
             this.txtKetQua.Size = new System.Drawing.Size(130, 20);
             this.txtKetQua.TabIndex = 6;
@@ -130,22 +130,23 @@
             // lblStatus
             // 
             this.lblStatus.AutoSize = true;
-            this.lblStatus.Location = new System.Drawing.Point(270, 15);
+            this.lblStatus.Location = new System.Drawing.Point(321, 15);
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(0, 13);
+            this.lblStatus.Size = new System.Drawing.Size(13, 13);
             this.lblStatus.TabIndex = 9;
+            this.lblStatus.Text = "_";
             // 
             // frmKiemTra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(328, 175);
+            this.ClientSize = new System.Drawing.Size(451, 175);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtKetQua);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblPort);
             this.Controls.Add(this.txtDocScan);
             this.Controls.Add(this.txtDocFile);
             this.Controls.Add(this.button2);
@@ -163,7 +164,7 @@
         private System.Windows.Forms.TextBox txtDocFile;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.TextBox txtDocScan;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblPort;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtKetQua;
         private System.Windows.Forms.Label label3;

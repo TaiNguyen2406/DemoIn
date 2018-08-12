@@ -147,24 +147,39 @@ namespace DemoIn
         }
         private void ConnectCOM()
         {
+         
             XmlDocument xmlDoc = new XmlDocument();
             xmlDoc.Load(Application.StartupPath + @"\Config.xml");
             XmlNode node = xmlDoc.DocumentElement.SelectSingleNode("ComPort");
-            serialPort1.PortName = node.Attributes["Name"].Value.ToString();
-            serialPort1.BaudRate = Convert.ToInt32(node.Attributes["BaudRate"].Value);
-            serialPort1.Parity = Parity.Even;
-            serialPort1.DataBits = Convert.ToInt32(node.Attributes["DataBits"].Value);
-            serialPort1.StopBits = StopBits.One;
-            serialPort1.ReceivedBytesThreshold = Convert.ToInt32(node.Attributes["ReceivedBytesThreshold"].Value);
-            if (serialPort1.IsOpen)
+            string[] comList = SerialPort.GetPortNames();
+            foreach (string com in comList)
             {
-                serialPort1.Close();
-            }
+                if (node.Attributes["Name"].Value.ToString()==com)
+                {
+                    serialPort1.PortName = node.Attributes["Name"].Value.ToString();
+                    serialPort1.BaudRate = Convert.ToInt32(node.Attributes["BaudRate"].Value);
+                    serialPort1.Parity = Parity.Even;
+                    serialPort1.DataBits = Convert.ToInt32(node.Attributes["DataBits"].Value);
+                    serialPort1.StopBits = StopBits.One;
+                    serialPort1.ReceivedBytesThreshold = Convert.ToInt32(node.Attributes["ReceivedBytesThreshold"].Value);
+                    if (serialPort1.IsOpen)
+                    {
+                        serialPort1.Close();
+                    }
 
-            //
-            // Open the COM port.
-            //
-            serialPort1.Open();
+                    //
+                    // Open the COM port.
+                    //
+                    serialPort1.Open();
+                    lblPort.Text = "Giá trị đọc từ cổng " + serialPort1.PortName.ToString();
+                }
+                else
+                {
+                    lblPort.Text = "Không có cổng " + node.Attributes["Name"].Value.ToString();
+                }
+            }
+          
+
         }
 
         private string DocCom()
@@ -248,8 +263,18 @@ namespace DemoIn
 
         private void button1_Click(object sender, EventArgs e)
         {
-            frmConfig f = new frmConfig();
-            f.ShowDialog();
+            serialPort1.Close();
+            timer1.Enabled = false;
+            timer2.Enabled = false;
+            if (!serialPort1.IsOpen)
+            {
+                frmConfig f = new frmConfig();
+                f.ShowDialog();
+                ConnectCOM();
+                timer1.Enabled = true ;
+                timer2.Enabled = true ;
+            }
+              
         }
     }
 }

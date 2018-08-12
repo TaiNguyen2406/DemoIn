@@ -49,6 +49,11 @@ namespace DemoIn
                 SerialPort1.DataBits = decimal.ToInt32(tbDataBits.Value);
                 SerialPort1.StopBits = StopBits.One;
                 SerialPort1.ReceivedBytesThreshold = decimal.ToInt32(tbRevBThreshold.Value);
+                SerialPort1.Open();
+                if (SerialPort1.IsOpen)
+                {
+                    MessageBox.Show("Connect thành công");
+                }
             }
             catch (Exception ex)
             {

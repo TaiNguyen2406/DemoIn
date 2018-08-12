@@ -40,6 +40,7 @@
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.button1 = new System.Windows.Forms.Button();
+            this.lblStatus = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button2
@@ -112,6 +113,10 @@
             this.timer2.Interval = 1000;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
+            // serialPort1
+            // 
+            this.serialPort1.ReadTimeout = 50;
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(15, 140);
@@ -122,11 +127,20 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Location = new System.Drawing.Point(270, 15);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(0, 13);
+            this.lblStatus.TabIndex = 9;
+            // 
             // frmKiemTra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 175);
+            this.ClientSize = new System.Drawing.Size(328, 175);
+            this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtKetQua);
@@ -156,5 +170,6 @@
         private System.Windows.Forms.Timer timer2;
         private System.IO.Ports.SerialPort serialPort1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lblStatus;
     }
 }
